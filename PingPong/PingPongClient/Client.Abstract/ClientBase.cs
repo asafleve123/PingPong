@@ -8,15 +8,8 @@ namespace PingPongClient.Client.Abstract
     {
         public string IP { get; set; }
         public int Port { get; set; }
-
-        public ClientBase()
-        {
-                
-        }
-
-        public abstract ConnectServer();
-
-        public abstract Job();
+        public abstract void ConnectToServer();
+        public abstract void Job();
 
     }
 }

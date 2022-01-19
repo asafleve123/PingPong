@@ -1,12 +1,14 @@
 ﻿using System;
-
+using PingPongClient.Client.Implements;
 namespace PingPongClient
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var client = new SocketClient();
+            client.ConnectToServer();
+            client.Job();
         }
     }
 }

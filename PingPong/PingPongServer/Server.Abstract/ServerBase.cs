@@ -8,14 +8,14 @@ namespace PingPongServer.Server.Abstract
     public abstract class ServerBase<T>
     {
 
-        public string IP { get; set; }
+        public string Ip { get; set; }
         public int Port { get; set; }
         protected ServerBase(string ip, int port)
         {
-            IP = ip;
+            Ip = ip;
             Port = port;
         }
-        public abstract void Connect(string ip, int Port);
+        public abstract void Connect();
         public abstract void ListenToSocket();
         public abstract Task Job(T client);
 
