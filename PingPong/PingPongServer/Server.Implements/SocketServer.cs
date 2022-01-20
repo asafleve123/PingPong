@@ -29,7 +29,7 @@ namespace PingPongServer.Server.Implements
             while (true)
             {
                 Socket clientSocket = Listener.Accept();
-                Job(clientSocket);
+                Task.Run(()=> { return Job(clientSocket); });
             }
         }
 
@@ -40,15 +40,11 @@ namespace PingPongServer.Server.Implements
             {
                 byte[] bytes = new Byte[1024];
                 string data = null;
-
-                while (true)
-                {
-                    int numByte = clientSocket.Receive(bytes);
-                    data += Encoding.ASCII.GetString(bytes, 0, numByte);
-                    Console.WriteLine(data);
-                    byte[] message = Encoding.ASCII.GetBytes(data);
-                    clientSocket.Send(message);
-                }
+                int numByte = clientSocket.Receive(bytes);
+                data += Encoding.ASCII.GetString(bytes, 0, numByte);
+                Console.WriteLine(data);
+                byte[] message = Encoding.ASCII.GetBytes(data);
+                clientSocket.Send(message);
             }
         }
 
