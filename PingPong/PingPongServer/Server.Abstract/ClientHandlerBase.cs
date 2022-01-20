@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.Threading.Tasks;
 namespace PingPongServer.Server.Abstract
 {
     public abstract class ClientHandlerBase
@@ -11,6 +11,6 @@ namespace PingPongServer.Server.Abstract
         {
             ClientConnection = clientConnection;
         }
-        public abstract 
+        public abstract Task Job();
     }
 }
