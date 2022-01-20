@@ -10,10 +10,11 @@ namespace PingPongServer.Server.Abstract
         public string Ip { get; set; }
         public int Port { get; set; }
         public IClientHandlerFactory Factory { get; set; }
-        protected ServerBase(string ip, int port)
+        protected ServerBase(string ip, int port, IClientHandlerFactory factory)
         {
             Ip = ip;
             Port = port;
+            Factory = factory;
         }
         public abstract void BindServerSocket();
         public abstract IClientConnection Accept();

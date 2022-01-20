@@ -1,5 +1,6 @@
 ﻿using System;
 using PingPongServer.Server.Implements;
+using PingPongServer.Factories;
 namespace PingPongServer
 {
     class Program
@@ -10,9 +11,9 @@ namespace PingPongServer
             //int port = int.Parse(args[2]);
             string ip = "127.0.0.1";
             int port = 8080;
-            var server = new SocketServer(ip,port);
-            server.Connect();
-            server.ListenToSocket();
+            var server = new SocketServer(ip, port, new StringClientHandlerFactory());
+            server.BindServerSocket();
+            server.AcceptClients();
         }
     }
 }

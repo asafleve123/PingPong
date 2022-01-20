@@ -10,11 +10,12 @@ namespace PingPongServer.Server.Implements
 {
     public class SocketServer : ServerBase
     {
+
         public Socket Listener { get; set; }
-        public SocketServer(string ip, int port) : base(ip, port)
+        public SocketServer(string ip, int port, IClientHandlerFactory factory) : base(ip, port, factory)
         {
         }
-
+        
         public override void BindServerSocket()
         {
             IPAddress ipAddr = IPAddress.Parse(Ip);
