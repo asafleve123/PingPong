@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using PingPongServer.Server.Implements;
 namespace PingPongServer.Server.Implements
 {
-    class TcpBasedServer
+    public class TcpBasedServer:ServerBase
     {
     }
 }

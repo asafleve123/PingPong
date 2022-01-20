@@ -27,7 +27,7 @@ namespace PingPongClient.Client.Implements
 
         public override void Job()
         {
-            while (true) 
+            while (true)
             {
                 Console.WriteLine("Enter message to send:");
                 string input = Console.ReadLine()+'\n';

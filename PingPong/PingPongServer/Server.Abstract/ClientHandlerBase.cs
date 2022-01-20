@@ -4,7 +4,13 @@ using System.Text;
 
 namespace PingPongServer.Server.Abstract
 {
-    class ClientHandlerBase
+    public abstract class ClientHandlerBase
     {
+        public IClientConnection ClientConnection { get; set; }
+        public ClientHandlerBase(IClientConnection clientConnection)
+        {
+            ClientConnection = clientConnection;
+        }
+        public abstract 
     }
 }

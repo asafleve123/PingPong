@@ -15,8 +15,10 @@ namespace PingPongServer.Server.Abstract
             Ip = ip;
             Port = port;
         }
-        public abstract void Connect();
-        public abstract void ListenToSocket();
+        public abstract void BindServerSocket();
+        public abstract IClientConnection Accept();
+
+        
         public abstract Task Job(T client);
 
     }

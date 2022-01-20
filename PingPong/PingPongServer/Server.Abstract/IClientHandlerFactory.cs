@@ -4,9 +4,7 @@ using System.Text;
 
 namespace PingPongServer.Server.Abstract
 {
-    public interface IClientConnection
+    interface IClientHandlerFactory
     {
-        public void send(byte[] bytes);
-        public byte[] recive();
     }
 }
