@@ -6,10 +6,10 @@ namespace PingPongServer.Server.Abstract
 {
     public abstract class ClientHandlerBase
     {
-        public IClientConnection ClientConnection { get; set; }
+        public IClientConnection MyClientConnection { get; set; }
         public ClientHandlerBase(IClientConnection clientConnection)
         {
-            ClientConnection = clientConnection;
+            MyClientConnection = clientConnection;
         }
         public abstract Task Job();
     }

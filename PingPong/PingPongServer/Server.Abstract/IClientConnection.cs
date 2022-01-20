@@ -6,7 +6,7 @@ namespace PingPongServer.Server.Abstract
 {
     public interface IClientConnection
     {
-        public void send(byte[] bytes);
-        public byte[] recive();
+        public void Send(byte[] bytes);
+        public byte[] Recive();
     }
 }

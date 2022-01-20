@@ -36,14 +36,7 @@ namespace PingPongServer.Server.Implements
         public override async Task Job(Socket clientSocket)
         {
             Console.WriteLine("Get a client reuest");
-            while (true)
-            {
-                
-                data += Encoding.ASCII.GetString(bytes, 0, numByte);
-                Console.WriteLine(data);
-                byte[] message = Encoding.ASCII.GetBytes(data);
-                
-            }
+            
         }
         */
     }

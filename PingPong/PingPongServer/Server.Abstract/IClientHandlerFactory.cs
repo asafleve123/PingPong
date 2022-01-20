@@ -6,6 +6,6 @@ namespace PingPongServer.Server.Abstract
 {
     public interface IClientHandlerFactory
     {
-        public ClientHandlerBase getClientHandler(IClientConnection);
+        public ClientHandlerBase getClientHandler(IClientConnection clientConnection);
     }
 }

@@ -15,14 +15,14 @@ namespace PingPongServer.ClientConncetion.Implements
             ClientSocket = clientSocket;
         }
 
-        public byte[] recive()
+        public byte[] Recive()
         {
             byte[] bytes = new Byte[1024];
             int numByte = ClientSocket.Receive(bytes);
             return bytes.Take(numByte).ToArray();
         }
 
-        public void send(byte[] bytes)
+        public void Send(byte[] bytes)
         {
             ClientSocket.Send(bytes);
         }
