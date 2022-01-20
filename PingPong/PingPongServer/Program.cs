@@ -11,7 +11,7 @@ namespace PingPongServer
             //int port = int.Parse(args[2]);
             string ip = "127.0.0.1";
             int port = 8080;
-            var server = new SocketServer(ip, port, new StringClientHandlerFactory());
+            var server = new TcpBasedServer(ip, port, new StringClientHandlerFactory());
             server.BindServerSocket();
             server.AcceptClients();
         }
