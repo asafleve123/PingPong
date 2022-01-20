@@ -4,7 +4,8 @@ using System.Text;
 
 namespace PingPongServer.Server.Abstract
 {
-    interface IClientHandlerFactory
+    public interface IClientHandlerFactory
     {
+        public ClientHandlerBase getClientHandler(IClientConnection);
     }
 }
