@@ -6,6 +6,8 @@ using PingPongClient.Client.Abstract;
 using Commons;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace PingPongClient.Client.Implements
 {
@@ -25,19 +27,25 @@ namespace PingPongClient.Client.Implements
 
         public override void Job()
         {
-            IFormatter formatter = new BinaryFormatter();
-            while (true) 
+            Parser parser = new Parser();
+            while (true)
             {
                 Console.WriteLine("Enter Person Name:");
                 string name = Console.ReadLine();
                 Console.WriteLine("Enter Person Age:");
                 int age = int.Parse(Console.ReadLine());
-                Person person = new Person(name,age);
-                formatter.Serialize(Stream, person);
+                Person person = new Person(name, age);
+
+
+                byte[] data = parser.ObjectToByteArray(person);
+                Task.Delay(1000);
+                Stream.Write(data, 0, data.Length);
                 Console.WriteLine("Message sent");
 
-                Person p = (Person)formatter.Deserialize(Stream);
-                
+                data = new byte[256];
+                Stream.Read(data, 0, data.Length);
+                Person p = (Person)parser.ByteArrayToObject(data);
+
                 Console.WriteLine("Message from Server -> {0}", p.ToString());
             }
         }

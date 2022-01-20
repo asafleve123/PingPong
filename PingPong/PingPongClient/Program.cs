@@ -6,7 +6,7 @@ namespace PingPongClient
     {
         static void Main(string[] args)
         {
-            var client = new SocketClient();
+            var client = new TcpBasedClient();
             client.ConnectToServer();
             client.Job();
         }
