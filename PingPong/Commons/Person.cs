@@ -2,6 +2,7 @@
 
 namespace Commons
 {
+    [Serializable]
     public class Person
     {
         private string _name;
